@@ -1,0 +1,114 @@
+@import "config";
+
+body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: $light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main {
+        margin: 1rem;
+        border-radius: 0.5rem;
+        max-width: 640px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+
+        &-heading {
+            border-radius: 0.5rem 0.5rem 0 0;
+            background-color: white;
+            padding: 1rem;
+
+            @include mq(1024px) {
+                padding: 2rem;
+            }
+            .title {
+                font-size: 1.2rem;
+                font-weight: 700;
+                padding: 0.5rem 0;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 0.5rem 0;
+            }
+            .paragraph {
+                line-height: 2rem;
+                padding: 0.5rem 0;
+            }
+        }
+        &-below {
+            border-radius: 0 0 0.5rem 0.5rem;
+            @include mq(640px) {
+                display: flex;
+            }
+            &-subscription {
+                background-color: $cyan;
+                flex: 1;
+                padding: 1rem;
+                @include mq(640px) {
+                    border-radius: 0 0 0 0.5rem;
+                }
+                @include mq(1024px) {
+                    padding: 2rem;
+                }
+                .title {
+                    font-size: 1.1rem;
+                    padding: 0.5rem 0;
+                }
+                .subtitle {
+                    padding: 0.5rem 0;
+                    display: flex;
+                    align-items: center;
+                    color: lighten($color: $cyan, $amount: 30%);
+
+                    .dollar {
+                        font-size: 2rem;
+                        padding-right: 0.7rem;
+                    }
+                }
+                .paragraph {
+                    padding-bottom: 1rem;
+                }
+                .button {
+                    background-color: $bright-yellow;
+                    border: none;
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    width: 100%;
+                    text-align: center;
+                    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                }
+                .button:hover {
+                    background-color: lighten(
+                        $color: $bright-yellow,
+                        $amount: 5%
+                    );
+                }
+                .button:active {
+                    transform: translateY(2px);
+                }
+            }
+            &-why {
+                background-color: lighten($color: $cyan, $amount: 3%);
+                flex: 1;
+                border-radius: 0 0 0.5rem 0.5rem;
+                padding: 1rem 1rem 1.5rem 1rem;
+                @include mq(640px) {
+                    border-radius: 0 0 0.5rem 0;
+                }
+                @include mq(1024px) {
+                    padding: 2rem;
+                }
+                .title {
+                    font-size: 1.1rem;
+                    padding: 0.2rem 0 1rem 0;
+                }
+            }
+        }
+    }
+}
